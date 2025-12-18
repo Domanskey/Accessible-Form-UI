@@ -30,6 +30,7 @@ body {
 }
 
 .button {
+  color: var(--second-color);
   border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
@@ -83,9 +84,7 @@ body {
 .form {
   display: flex;
   flex-direction: column;
-  // align-items: stretch;
-  width: 80%;
-  max-width: 320px;
+  width: min(80%, 320px);
   gap: 1rem;
 }
 
@@ -105,14 +104,11 @@ body {
 }
 
 .progress {
-  width: 80%;
-  max-width: 320px;
+  min-width: min(80%, 320px);
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
   align-items: center;
   gap: 1rem;
-  // margin-top: 1rem;
 
   &__checklist {
     background-color: var(--third-color);
@@ -137,12 +133,24 @@ body {
 @media screen and (min-width: $tablet) {
   .profile {
     flex-direction: row-reverse;
+    gap: 3rem;
+  }
+
+  .progress {
+    min-width: 224px;
+    // align-self: baseline;
+    &__checklist {
+      height: 13rem;
+    }
+  }
+
+  .form {
+    min-width: min(80%, 320px);
+
   }
 }
 
-@media screen and (min-width: $desktop) {
-  
-}
+@media screen and (min-width: $desktop) {}
 
 @media (prefers-color-scheme: light) {
   :root {
