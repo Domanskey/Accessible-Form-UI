@@ -26,6 +26,7 @@
 
     <form class="form">
 
+      <div>
       <fieldset class="fieldset">
         <label class="fieldset__label" for="name">Full Name</label>
         <input class="fieldset__input" type="text" id="name" name="name" required minlength="4" maxlength="20" />
@@ -38,7 +39,9 @@
         <p class="fieldset__warning">Warning</p>
 
       </fieldset>
+      </div>
 
+      <div>
       <fieldset class="fieldset">
         <label class="fieldset__label" for="password">Enter Password</label>
         <input class="fieldset__input" type="password" id="password" name="password" required minlength="4"
@@ -54,8 +57,10 @@
         <p class="fieldset__warning">Warning</p>
 
       </fieldset>
+      </div>
+      <button class="button">Update profile</button>
     </form>
-    <button class="button">Update profile</button>
+    
   </main>
   <script type="module" src="/src/main.js"></script>
 </body>
