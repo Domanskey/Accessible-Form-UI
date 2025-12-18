@@ -1,13 +1,63 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>accessible-form-ui</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Accessible Form</title>
+</head>
+
+<body>
+  <main class="profile">
+
+    <div class="progress">
+
+      <div class="progress__percentage"></div>
+      <p class="progress__description">Profile Completeness</p>
+
+      <ul class="progress__checklist">
+        <li class="item">Create Account</li>
+        <li class="item">Name</li>
+        <li class="item">Email</li>
+        <li class="item">Password</li>
+      </ul>
+    </div>
+
+    <form class="form">
+
+      <fieldset class="fieldset">
+        <label class="fieldset__label" for="name">Full Name</label>
+        <input class="fieldset__input" type="text" id="name" name="name" required minlength="4" maxlength="20" />
+        <p class="fieldset__warning">Warning</p>
+      </fieldset>
+
+      <fieldset class="fieldset">
+        <label class="fieldset__label" for="email">Email</label>
+        <input class="fieldset__input" type="email" id="email" name="email" required minlength="4" maxlength="30" />
+        <p class="fieldset__warning">Warning</p>
+
+      </fieldset>
+
+      <fieldset class="fieldset">
+        <label class="fieldset__label" for="password">Enter Password</label>
+        <input class="fieldset__input" type="password" id="password" name="password" required minlength="4"
+          maxlength="8" />
+        <p class="fieldset__warning">Warning</p>
+
+      </fieldset>
+
+      <fieldset class="fieldset">
+        <label class="fieldset__label" for="passwordConfirmation">Confirm Password</label>
+        <input class="fieldset__input" type="password" id="passwordConfirmation" name="passwordConfirmation" required
+          minlength="4" maxlength="8" />
+        <p class="fieldset__warning">Warning</p>
+
+      </fieldset>
+    </form>
+    <button class="button">Update profile</button>
+  </main>
+  <script type="module" src="/src/main.js"></script>
+</body>
+
 </html>

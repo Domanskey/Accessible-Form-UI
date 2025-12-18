@@ -1,0 +1,143 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-size: 1.1rem;
+  --main-color: #242424;
+  --second-color: rgba(255, 255, 255, 0.87);
+  --third-color: #1a1a1a;
+  color-scheme: light dark;
+  color: var(--second-color);
+  background-color: var(--main-color);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box; // box-sizing nie jest dziedziczony automatycznie z elementu nadrzędnego
+}
+
+body {
+  margin: 0;
+}
+
+.button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: var(--third-color);
+  cursor: pointer;
+  transition: border-color 0.25s;
+
+  &:hover {
+    border-color: #646cff;
+  }
+
+  &:focus,
+  &:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+
+  }
+}
+
+.fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+  min-width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+
+  &__label {
+    display: block;
+  }
+
+  &__input {
+    font-size: inherit;
+    border-radius: 0.5rem;
+    color: inherit;
+    border: 1px solid var(--second-color);
+    padding: 0.5rem 1rem;
+  }
+
+  &__warning {
+    margin: 0;
+    padding: 0;
+    font-size: 0.8rem;
+    color: #df2e2e;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  // align-items: stretch;
+  width: 80%;
+  max-width: 320px;
+  // gap: 0.3rem;
+}
+
+.item {
+  opacity: 1;
+}
+
+.profile {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+
+  justify-content: center;
+  gap: 1rem;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+.progress {
+  width: 80%;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1rem;
+  // margin-top: 1rem;
+
+  &__checklist {
+    background-color: var(--third-color);
+    border-radius: 1rem;
+    padding: 1rem 2rem;
+    margin: 0;
+    width: 100%;
+  }
+
+  &__description {
+    text-align: center;
+    margin: 0;
+  }
+
+  &__percentage {
+    width: 5rem;
+    height: 5rem;
+    background-color: #646cff;
+  }
+}
+
+
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --main-color: #ffffff;
+    --second-color: #213547;
+    --third-color: #e5e5e5;
+  }
+}
