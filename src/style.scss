@@ -47,7 +47,6 @@ body {
   &:focus,
   &:focus-visible {
     outline: 4px auto -webkit-focus-ring-color;
-
   }
 }
 
@@ -70,6 +69,11 @@ body {
     color: inherit;
     border: 1px solid var(--second-color);
     padding: 0.5rem 1rem;
+
+    &:focus,
+    &:focus-visible {
+      outline: 4px auto -webkit-focus-ring-color;
+    }
   }
 
   &__warning {
@@ -137,6 +141,7 @@ body {
 
   .progress {
     min-width: 224px;
+
     // align-self: baseline;
     &__checklist {
       height: 13rem;
