@@ -5,7 +5,6 @@ $desktop: 1024px;
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  font-size: 1.1rem;
   --main-color: #242424;
   --second-color: rgba(255, 255, 255, 0.87);
   --third-color: #1a1a1a;
@@ -59,6 +58,26 @@ body {
   flex-direction: column;
   gap: 0.1rem;
 
+  &__button {
+    height: 1.5rem;
+    width: 1.5rem;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background: none;
+    cursor: pointer;
+
+    & svg {
+      fill: var(--second-color);
+    }
+
+    & svg:last-child {
+      display: none;
+    }
+  }
+
   &__label {
     display: block;
   }
@@ -68,7 +87,7 @@ body {
     border-radius: 0.5rem;
     color: inherit;
     border: 1px solid var(--second-color);
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 0.7rem;
 
     &:focus,
     &:focus-visible {
@@ -133,7 +152,25 @@ body {
   }
 }
 
+.visible {
+
+  & .fieldset__button {
+
+    & svg:first-child {
+      display: none;
+    }
+
+    & svg:last-child {
+      display: block;
+    }
+  }
+}
+
 @media screen and (min-width: $tablet) {
+  :root {
+    font-size: 1.1rem;
+  }
+
   .profile {
     flex-direction: row-reverse;
     gap: 3rem;
@@ -142,7 +179,6 @@ body {
   .progress {
     min-width: 224px;
 
-    // align-self: baseline;
     &__checklist {
       height: 13rem;
     }
