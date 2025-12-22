@@ -169,8 +169,6 @@ body {
 
 .visible {
 
-  & .fieldset__button {
-
     & svg:first-child {
       display: none;
     }
@@ -178,10 +176,9 @@ body {
     & svg:last-child {
       display: block;
     }
-  }
 }
 
-.warning {
+.wrong {
   color: #df2e2e;
 
   & p {
