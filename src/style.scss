@@ -8,6 +8,8 @@ $desktop: 1024px;
   --main-color: #242424;
   --second-color: rgba(255, 255, 255, 0.87);
   --third-color: #1a1a1a;
+  --valid-color: rgb(160, 223, 67);
+  --invalid-color: #df2e2e;
   color-scheme: light dark;
   color: var(--second-color);
   background-color: var(--main-color);
@@ -88,6 +90,14 @@ body {
     }
   }
 
+  &__error {
+    visibility: hidden;
+    color: var(--invalid-color);
+    margin: 0;
+    padding: 0;
+    font-size: 0.8rem;
+  }
+
   &__label {
     display: block;
   }
@@ -105,13 +115,6 @@ body {
       outline: 4px auto -webkit-focus-ring-color;
     }
   }
-
-  &__warning {
-    visibility: hidden;
-    margin: 0;
-    padding: 0;
-    font-size: 0.8rem;
-  }
 }
 
 .form {
@@ -126,7 +129,7 @@ body {
 }
 
 .password-wrapper {
-    position: relative;
+  position: relative;
 }
 
 .profile {
@@ -169,28 +172,27 @@ body {
 
 .visible {
 
-    & svg:first-child {
-      display: none;
-    }
-
-    & svg:last-child {
-      display: block;
-    }
-}
-
-.wrong {
-  color: #df2e2e;
-
-  & p {
-    visibility: visible;
+  & svg:first-child {
+    display: none;
   }
 
-  & input {
-    border-color: #df2e2e;
+  & svg:last-child {
+    display: block;
   }
-
 }
 
+// validation
+.invalid {
+  color: var(--invalid-color);
+  border-color: var(--invalid-color);
+}
+
+.valid {
+  color: var(--valid-color);
+  border-color: var(--valid-color);
+}
+
+// mediaqueries
 @media screen and (min-width: $tablet) {
 
   .profile {
@@ -236,6 +238,8 @@ body {
     --main-color: #ffffff;
     --second-color: #213547;
     --third-color: #e5e5e5;
+    --valid-color: rgb(67, 178, 45);
+    --invalid-color: #ba1515;
   }
 
   .button {

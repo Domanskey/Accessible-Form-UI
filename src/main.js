@@ -1,5 +1,6 @@
 import './style.scss'
 import './password.js'
+import './validation.js'
 
 // const warningElement = document.getElementById('password-warning');
 
