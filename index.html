@@ -58,7 +58,7 @@
           <div class="password-wrapper">
 
             <input placeholder="xxxxxxxx" class="fieldset__input" type="password" id="password" name="password" required
-              minlength="4" maxlength="30">
+              minlength="8" maxlength="30" pattern="(?=.*[A-Z]).{8,}">
 
             <button type="button" id="toggle-password" aria-label="Show password" aria-pressed="false"
               class="fieldset__button">
@@ -87,7 +87,7 @@
           <div class="password-wrapper">
 
             <input placeholder="xxxxxxxx" class="fieldset__input" type="password" id="passwordConfirmation"
-              name="passwordConfirmation" required minlength="4" maxlength="30">
+              name="passwordConfirmation" required minlength="8" maxlength="30" pattern="(?=.*[A-Z]).{8,}">
 
             <button type="button" id="toggle-password-confirmation" aria-label="Show password" aria-pressed="false"
               class="fieldset__button">
