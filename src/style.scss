@@ -132,6 +132,47 @@ body {
   position: relative;
 }
 
+.percentage {
+  position: relative;
+  height: 9rem;
+
+
+  &__border {
+    fill: none;
+    stroke-width: 12px;
+    stroke: var(--third-color);
+  }
+
+  &__circle {
+    width: 9rem;
+    height: 9rem;
+    transform: rotate(-90deg);
+  }
+
+  &__completeness {
+    fill: none;
+    stroke-width: 12px;
+    stroke: var(--valid-color);
+    stroke-linecap: round;
+    stroke-dasharray: 415;
+    stroke-dashoffset: 415;
+
+    &--ready {
+      transition: stroke-dashoffset 0.8s ease-out;
+    }
+  }
+
+  &__number {
+    position: absolute;
+    margin: 0;
+    color: var(--valid-color);
+    font-size: 1.2rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
 .profile {
   margin: 0;
   display: flex;
@@ -161,12 +202,6 @@ body {
   &__description {
     text-align: center;
     margin: 0;
-  }
-
-  &__percentage {
-    width: 5rem;
-    height: 5rem;
-    background-color: #646cff;
   }
 }
 

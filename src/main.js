@@ -1,7 +1,7 @@
 import './style.scss'
 import './password.js'
 import './validation.js'
-
+import './percentage.js'
 // const warningElement = document.getElementById('password-warning');
 
 // function showWarning(message) {
