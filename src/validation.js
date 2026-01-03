@@ -1,15 +1,19 @@
+import { updateCircle } from "./percentage";
+
 const inputs = document.querySelectorAll('.fieldset__input');
 const password = document.getElementById('password');
 const passwordConfirmation = document.getElementById('passwordConfirmation');
+let curNumber= 0;
+const set = new Set(), inputsLength = inputs.length;
 
 inputs.forEach(input => {
-    // wyjscie z pola
+    // input exit
     input.addEventListener('blur', () => {
         validatePassword(input);
         validateField(input);
     });
 
-    // czyszczenie podczas pisania jesli bylo invalid lub valid
+    // check value every letter if valid or invalid
     input.addEventListener('input', () => {
         if (input.classList.contains('invalid') || input.classList.contains("valid")) {
             validatePassword(input);
@@ -19,9 +23,10 @@ inputs.forEach(input => {
 });
 
 function validateField(field) {
-    const error = field.closest('.fieldset').querySelector('.fieldset__error'); // input -> rodzic -> dziecko
+    const error = field.closest('.fieldset').querySelector('.fieldset__error'); // input -> parent -> child
 
     if (!field.checkValidity()) {
+        set.delete(field)
         error.style.visibility = 'visible';
         field.classList.add('invalid');
         field.classList.remove('valid');
@@ -41,10 +46,14 @@ function validateField(field) {
             error.textContent = "Passwords must be identical.";
         }
     } else {
+        set.add(field);
         error.style.visibility = 'hidden';
         field.classList.remove('invalid');
         field.classList.add('valid');
     }
+
+    curNumber = (set.size / inputsLength).toFixed(2) * 100;
+    updateCircle(curNumber);
 }
 
 function validatePassword(field) {
