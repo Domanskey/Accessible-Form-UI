@@ -1,9 +1,12 @@
 import { updateCircle } from "./percentage";
+import { completeTask } from "./list";
 
 const inputs = document.querySelectorAll('.fieldset__input');
 const password = document.getElementById('password');
 const passwordConfirmation = document.getElementById('passwordConfirmation');
-let curNumber= 0;
+const button = document.querySelector('.button');
+
+let curNumber = 0;
 const set = new Set(), inputsLength = inputs.length;
 
 inputs.forEach(input => {
@@ -22,6 +25,8 @@ inputs.forEach(input => {
     });
 });
 
+button.addEventListener('click', () => { updateProfile() })
+
 function validateField(field) {
     const error = field.closest('.fieldset').querySelector('.fieldset__error'); // input -> parent -> child
 
@@ -31,7 +36,7 @@ function validateField(field) {
         field.classList.add('invalid');
         field.classList.remove('valid');
 
-        // komunikat
+
         if (field.validity.valueMissing) {
             error.textContent = "This field cannot be empty.";
         } else if (field.validity.typeMismatch) {
@@ -47,9 +52,13 @@ function validateField(field) {
         }
     } else {
         set.add(field);
+
         error.style.visibility = 'hidden';
+
         field.classList.remove('invalid');
         field.classList.add('valid');
+
+        completeTask(field);
     }
 
     curNumber = (set.size / inputsLength).toFixed(2) * 100;
@@ -75,4 +84,8 @@ function validatePassword(field) {
     } else if (field.id == 'passwordConfirmation' && passwordConfirmation.value == password.value) {
         field.setCustomValidity(""); // odblokowuje 
     }
+}
+
+function updateProfile() {
+    if (set.size === inputsLength) completeTask(button);
 }
