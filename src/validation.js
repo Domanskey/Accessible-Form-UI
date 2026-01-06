@@ -32,9 +32,14 @@ function validateField(field) {
 
     if (!field.checkValidity()) {
         set.delete(field)
+
         error.style.visibility = 'visible';
+
         field.classList.add('invalid');
         field.classList.remove('valid');
+
+        field.setAttribute("aria-invalid", "true");
+        field.setAttribute("aria-describedby", error.id);
 
 
         if (field.validity.valueMissing) {
@@ -51,6 +56,9 @@ function validateField(field) {
             error.textContent = "Passwords must be identical.";
         }
     } else {
+        field.removeAttribute("aria-invalid");
+        field.removeAttribute("aria-describedby");
+
         set.add(field);
 
         error.style.visibility = 'hidden';
