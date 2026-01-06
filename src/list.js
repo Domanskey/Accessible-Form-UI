@@ -13,3 +13,8 @@ export function completeTask(input) {
   const item = items[map[input.id]];
   item.classList.add('done');
 }
+
+export function removeTask(input) {
+  const item = items[map[input.id]];
+  item.classList.remove('done');
+}

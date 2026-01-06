@@ -1,5 +1,5 @@
 import { updateCircle } from "./percentage";
-import { completeTask } from "./list";
+import { completeTask, removeTask} from "./list";
 
 const inputs = document.querySelectorAll('.fieldset__input');
 const password = document.getElementById('password');
@@ -41,6 +41,7 @@ function validateField(field) {
         field.setAttribute("aria-invalid", "true");
         field.setAttribute("aria-describedby", error.id);
 
+        removeTask(field);
 
         if (field.validity.valueMissing) {
             error.textContent = "This field cannot be empty.";
