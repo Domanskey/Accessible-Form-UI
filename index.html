@@ -48,40 +48,40 @@
 
     <form class="form">
 
-      <div>
-        <fieldset class="fieldset">
+      <fieldset class="fieldset">
+        <div class="group">
 
-          <label class="fieldset__label" for="name">Full Name</label>
+          <label class="group__label" for="name">Full Name</label>
 
-          <input placeholder="What should we call you?" class="fieldset__input" type="text" id="name" name="name"
+          <input placeholder="What should we call you?" class="group__input" type="text" id="name" name="name"
             required minlength="3" maxlength="25" pattern="\s*[A-Z][a-z]+\s+[A-Z]'?[A-Za-z]+\s*">
 
-          <p id="name-warning" class="fieldset__error">Warning</p>
-        </fieldset>
+          <p id="name-warning" class="group__error">Warning</p>
+        </div>
 
-        <fieldset class="fieldset">
+        <div class="group">
 
-          <label class="fieldset__label" for="email">Email</label>
+          <label class="group__label" for="email">Email</label>
 
-          <input placeholder="How can we reach you?" class="fieldset__input" type="email" id="email" name="email"
+          <input placeholder="How can we reach you?" class="group__input" type="email" id="email" name="email"
             required minlength="5" maxlength="30">
 
-          <p id="email-warning" class="fieldset__error">Warning</p>
-        </fieldset>
-      </div>
+          <p id="email-warning" class="group__error">Warning</p>
+        </div>
+      </fieldset>
 
-      <div>
-        <fieldset class="fieldset">
+      <fieldset class="fieldset">
+        <div class="group">
 
-          <label class="fieldset__label" for="password">Enter Password</label>
+          <label class="group__label" for="password">Enter Password</label>
 
           <div class="password-wrapper">
 
-            <input placeholder="xxxxxxxx" class="fieldset__input" type="password" id="password" name="password" required
+            <input placeholder="xxxxxxxx" class="group__input" type="password" id="password" name="password" required
               minlength="8" maxlength="30" pattern="(?=.*[A-Z]).{8,}">
 
             <button type="button" id="toggle-password" aria-label="Show password" aria-pressed="false"
-              class="fieldset__button">
+              class="group__button">
 
               <svg aria-label="closed eye symbol" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
                 fill="#e8eaed">
@@ -97,20 +97,20 @@
             </button>
           </div>
 
-          <p id="password-warning" class="fieldset__error">Warning</p>
-        </fieldset>
+          <p id="password-warning" class="group__error">Warning</p>
+        </div>
 
-        <fieldset class="fieldset">
+        <div class="group">
 
-          <label class="fieldset__label" for="passwordConfirmation">Confirm Password</label>
+          <label class="group__label" for="passwordConfirmation">Confirm Password</label>
 
           <div class="password-wrapper">
 
-            <input placeholder="xxxxxxxx" class="fieldset__input" type="password" id="passwordConfirmation"
+            <input placeholder="xxxxxxxx" class="group__input" type="password" id="passwordConfirmation"
               name="passwordConfirmation" required minlength="8" maxlength="30" pattern="(?=.*[A-Z]).{8,}">
 
             <button type="button" id="toggle-password-confirmation" aria-label="Show password" aria-pressed="false"
-              class="fieldset__button">
+              class="group__button">
 
               <svg aria-label="closed eye symbol" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
                 fill="#e8eaed">
@@ -126,9 +126,9 @@
             </button>
           </div>
 
-          <p id="passwordConfrimation-warning" class="fieldset__error">Warning</p>
-        </fieldset>
-      </div>
+          <p id="passwordConfrimation-warning" class="group__error">Warning</p>
+        </div>
+      </fieldset>
 
       <button type="submit" class="button" id="button">Update profile</button>
     </form>

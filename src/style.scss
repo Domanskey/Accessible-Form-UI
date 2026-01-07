@@ -52,9 +52,19 @@ body {
 }
 
 .fieldset {
-  border: none;
   margin: 0;
   padding: 0;
+  border: none;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: min(80%, 320px);
+  gap: 1rem;
+}
+
+.group {
   min-width: 100%;
   display: flex;
   flex-direction: column;
@@ -115,13 +125,6 @@ body {
       outline: 4px auto -webkit-focus-ring-color;
     }
   }
-}
-
-.form {
-  display: flex;
-  flex-direction: column;
-  width: min(80%, 320px);
-  gap: 1rem;
 }
 
 .item {

@@ -1,7 +1,7 @@
 import { updateCircle } from "./percentage";
 import { completeTask, removeTask} from "./list";
 
-const inputs = document.querySelectorAll('.fieldset__input');
+const inputs = document.querySelectorAll('.group__input');
 const password = document.getElementById('password');
 const passwordConfirmation = document.getElementById('passwordConfirmation');
 const button = document.querySelector('.button');
@@ -28,7 +28,7 @@ inputs.forEach(input => {
 button.addEventListener('click', () => { updateProfile() })
 
 function validateField(field) {
-    const error = field.closest('.fieldset').querySelector('.fieldset__error'); // input -> parent -> child
+    const error = field.closest('.group').querySelector('.group__error'); // input -> parent -> child
 
     if (!field.checkValidity()) {
         set.delete(field)
