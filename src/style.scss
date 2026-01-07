@@ -9,7 +9,7 @@ $desktop: 1024px;
   --second-color: rgba(255, 255, 255, 0.87);
   --third-color: #1a1a1a;
   --valid-color: rgb(160, 223, 67);
-  --invalid-color: #df2e2e;
+  --invalid-color: #FF4542;
   color-scheme: light dark;
   color: var(--second-color);
   background-color: var(--main-color);
@@ -285,7 +285,7 @@ body {
     --main-color: #ffffff;
     --second-color: #213547;
     --third-color: #e5e5e5;
-    --valid-color: rgb(67, 178, 45);
+    --valid-color: #008A0E;
     --invalid-color: #ba1515;
   }
 
